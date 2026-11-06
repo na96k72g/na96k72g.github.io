@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大赛免费观赛-免费观赛入口_今日大赛热点合集</title>
+<meta name="description" content="每日大赛免费观赛首页，汇集每日大赛免费观赛的入口说明、热点看点与内容分区，帮助访客快速找到免费观赛路径，了解当天大赛话题与热门片段。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131921'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23ffb454' stroke-width='4'/%3E%3Cpath d='M27 23l15 9-15 9z' fill='%23ff5a4d'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0f1319;
+    --bg-soft:#161c25;
+    --card:#1b232e;
+    --line:#2a3442;
+    --text:#e8edf3;
+    --muted:#9aa8b8;
+    --gold:#ffb454;
+    --red:#ff5a4d;
+    --teal:#3fd0b0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{width:min(1160px,92vw);margin:0 auto;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(15,19,25,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:14px 0;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;font-size:17px;letter-spacing:.5px;color:#fff;
+    white-space:nowrap;
+  }
+  .logo .mark{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,#ff5a4d,#ffb454);
+    display:grid;place-items:center;flex:none;
+  }
+  .logo .mark svg{width:18px;height:18px;}
+  nav ul{
+    display:flex;align-items:center;gap:22px;list-style:none;
+    font-size:14px;color:var(--muted);
+  }
+  nav ul a{transition:color .2s;}
+  nav ul a:hover{color:var(--gold);}
+  .nav-cta{
+    background:var(--gold);color:#1a1206;font-weight:700;
+    font-size:13px;padding:8px 16px;border-radius:8px;white-space:nowrap;
+    transition:filter .2s;
+  }
+  .nav-cta:hover{filter:brightness(1.08);}
+  .burger{display:none;}
+
+  /* hero */
+  .hero{
+    position:relative;overflow:hidden;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(900px 380px at 82% -12%,rgba(255,90,77,.20),transparent 65%),
+      radial-gradient(760px 340px at 8% 0%,rgba(63,208,176,.13),transparent 62%),
+      var(--bg-soft);
+  }
+  .hero-inner{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:44px;
+    align-items:center;padding:58px 0 62px;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;color:var(--gold);letter-spacing:1px;
+    border:1px solid rgba(255,180,84,.35);
+    background:rgba(255,180,84,.08);
+    padding:5px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--red);}
+  h1{
+    font-size:clamp(28px,4.4vw,46px);
+    line-height:1.24;font-weight:900;letter-spacing:.5px;
+    margin-bottom:16px;
+  }
+  h1 .hl{
+    background:linear-gradient(100deg,var(--gold),var(--red));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{
+    color:var(--muted);font-size:15.5px;max-width:34em;margin-bottom:24px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(120deg,var(--red),#ff8a4d);
+    color:#fff;font-weight:700;font-size:15px;
+    padding:12px 24px;border-radius:10px;
+    box-shadow:0 10px 26px -12px rgba(255,90,77,.8);
+    transition:transform .2s,filter .2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.06);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);color:var(--text);
+    font-size:14.5px;padding:11px 20px;border-radius:10px;
+    background:rgba(255,255,255,.03);transition:border-color .2s,color .2s;
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .hero-stats{
+    display:flex;gap:28px;margin-top:30px;flex-wrap:wrap;
+    border-top:1px dashed var(--line);padding-top:20px;
+  }
+  .hero-stats div strong{
+    display:block;font-size:20px;color:var(--gold);font-weight:800;line-height:1.3;
+  }
+  .hero-stats div span{font-size:12.5px;color:var(--muted);}
+
+  .hero-art{
+    position:relative;
+    border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(160deg,#1e2733,#141a22);
+    padding:22px;box-shadow:0 26px 60px -30px #000;
+  }
+  .hero-art .screen{
+    border-radius:12px;overflow:hidden;border:1px solid var(--line);
+    background:#0c1117;
+  }
+  .hero-art .screen svg{width:100%;height:auto;}
+  .art-caption{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:14px;font-size:12.5px;color:var(--muted);
+  }
+  .live-tag{
+    display:inline-flex;align-items:center;gap:6px;color:var(--red);font-weight:700;
+  }
+  .live-tag i{width:7px;height:7px;border-radius:50%;background:var(--red);animation:blink 1.4s infinite;}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+  /* section base */
+  section{padding:56px 0;}
+  .sec-head{margin-bottom:28px;max-width:44em;}
+  .sec-head .kicker{
+    font-size:12.5px;letter-spacing:2px;color:var(--teal);
+    font-weight:700;margin-bottom:8px;
+  }
+  h2{
+    font-size:clamp(21px,2.6vw,28px);font-weight:800;letter-spacing:.5px;
+    margin-bottom:10px;
+  }
+  .sec-head p{color:var(--muted);font-size:14.5px;}
+
+  /* quick entries */
+  .entries{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  .entry{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 18px;transition:transform .2s,border-color .2s;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .entry:hover{transform:translateY(-3px);border-color:rgba(255,180,84,.55);}
+  .entry .ico{
+    width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+    background:rgba(255,180,84,.12);color:var(--gold);
+  }
+  .entry h3{font-size:15px;font-weight:700;}
+  .entry p{font-size:13px;color:var(--muted);line-height:1.65;}
+  .entry .go{margin-top:auto;font-size:12.5px;color:var(--teal);font-weight:600;}
+
+  /* schedule / hot list */
+  .hot-grid{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:start;}
+  .hot-list{display:flex;flex-direction:column;gap:14px;}
+  .hot-item{
+    display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;transition:border-color .2s;
+  }
+  .hot-item:hover{border-color:rgba(255,90,77,.5);}
+  .hot-item .no{
+    font-size:22px;font-weight:900;color:rgba(255,180,84,.45);
+    font-variant-numeric:tabular-nums;
+  }
+  .hot-item h3{font-size:15.5px;font-weight:700;margin-bottom:4px;}
+  .hot-item p{font-size:13px;color:var(--muted);}
+  .hot-item .tag{
+    font-size:11.5px;padding:3px 10px;border-radius:999px;white-space:nowrap;
+    background:rgba(63,208,176,.12);color:var(--teal);font-weight:600;
+  }
+  .hot-item .tag.warm{background:rgba(255,90,77,.13);color:#ff8b80;}
+
+  .side-card{
+    background:linear-gradient(160deg,#1d2632,#151b23);
+    border:1px solid var(--line);border-radius:14px;padding:22px;
+  }
+  .side-card h3{font-size:15.5px;margin-bottom:12px;}
+  .side-card ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  .side-card li{
+    font-size:13.5px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;
+  }
+  .side-card li::before{
+    content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);
+    margin-top:8px;flex:none;
+  }
+  .side-card .note{
+    margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+    font-size:12.5px;color:#7f8d9d;
+  }
+
+  /* view modes */
+  .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .mode{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;
+    padding:24px 22px;
+  }
+  .mode .badge{
+    font-size:12px;font-weight:700;letter-spacing:1px;color:var(--gold);
+    margin-bottom:10px;
+  }
+  .mode h3{font-size:17px;margin-bottom:10px;}
+  .mode p{font-size:13.5px;color:var(--muted);}
+  .mode ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+  .mode li{font-size:13px;color:#c3ccd7;display:flex;gap:8px;}
+  .mode li span{color:var(--teal);}
+
+  /* about / editorial */
+  .about{
+    display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:start;
+    border-top:1px solid var(--line);
+  }
+  .about p{font-size:14.5px;color:#c3ccd7;margin-bottom:14px;}
+  .about p strong{color:var(--gold);font-weight:700;}
+  .about .quote{
+    background:var(--card);border-left:3px solid var(--red);
+    border-radius:0 10px 10px 0;padding:16px 18px;font-size:13.5px;color:var(--muted);
+    margin-top:6px;
+  }
+  .faq{display:flex;flex-direction:column;gap:12px;}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;
+  }
+  details summary{
+    cursor:pointer;font-weight:700;font-size:14.5px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";color:var(--gold);font-weight:700;}
+  details[open] summary::after{content:"−";}
+  details p{font-size:13.5px;color:var(--muted);margin-top:10px;}
+
+  /* download strip */
+  .strip{
+    border:1px solid var(--line);border-radius:16px;
+    background:
+      radial-gradient(500px 200px at 88% 0%,rgba(63,208,176,.14),transparent 70%),
+      var(--card);
+    padding:30px 32px;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+  .strip h2{font-size:20px;margin-bottom:6px;}
+  .strip p{font-size:13.5px;color:var(--muted);max-width:34em;}
+  .btn-download{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--teal);color:#062220;font-weight:800;font-size:14.5px;
+    padding:11px 24px;border-radius:10px;pointer-events:none;opacity:.92;
+  }
+
+  /* footer */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--bg-soft);
+    padding:36px 0 26px;margin-top:8px;
+  }
+  .foot-top{
+    display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;
+    padding-bottom:22px;border-bottom:1px solid var(--line);
+  }
+  .foot-brand{max-width:26em;}
+  .foot-brand .logo{margin-bottom:10px;}
+  .foot-brand p{font-size:13px;color:var(--muted);}
+  .foot-links{display:flex;gap:52px;flex-wrap:wrap;}
+  .foot-col h4{font-size:13px;color:#fff;margin-bottom:10px;letter-spacing:.5px;}
+  .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .foot-col a{font-size:13px;color:var(--muted);transition:color .2s;}
+  .foot-col a:hover{color:var(--gold);}
+  .foot-bottom{
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    padding-top:18px;font-size:12.5px;color:#7f8d9d;
+  }
+
+  @media(max-width:980px){
+    .hero-inner{grid-template-columns:1fr;gap:32px;padding:44px 0 48px;}
+    .hero-art{max-width:520px;}
+    .entries{grid-template-columns:repeat(2,1fr);}
+    .hot-grid{grid-template-columns:1fr;}
+    .modes{grid-template-columns:1fr;}
+    .about{grid-template-columns:1fr;gap:26px;}
+  }
+  @media(max-width:720px){
+    nav ul{display:none;}
+    .nav{padding:12px 0;}
+    .logo{font-size:15px;}
+    .logo .mark{width:30px;height:30px;}
+    .nav-cta{font-size:12.5px;padding:7px 13px;}
+    .hero-stats{gap:20px;}
+    .hot-item{grid-template-columns:44px 1fr;gap:12px;}
+    .hot-item .tag{grid-column:2;justify-self:start;margin-top:2px;}
+    .strip{padding:24px 20px;}
+    section{padding:44px 0;}
+    .foot-links{gap:32px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="每日大赛免费观赛首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 7l8 5-8 5V7z" fill="#1a1206"/></svg>
+      </span>
+      每日大赛免费观赛
+    </a>
+    <nav aria-label="主导航">
+      <ul>
+        <li><a href="#entry">观赛入口</a></li>
+        <li><a href="#hot">今日热点</a></li>
+        <li><a href="#modes">观看方式</a></li>
+        <li><a href="#explain">观赛答疑</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#entry">进入免费观赛</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><i class="dot"></i>今日大赛热点持续更新</span>
+        <h1>每日大赛免费观赛</h1>
+        <p class="lead">
+          每天固定时段汇集大赛热门片段与话题看点，把免费观赛入口、热点排行和观看方式放在同一页。想直接看当天大赛内容，从这里开始即可。
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#entry">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7V5z" fill="currentColor"/></svg>
+            立即免费观赛
+          </a>
+          <a class="btn-ghost" href="#hot">先看今日热点</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>每日</strong><span>固定更新节奏</span></div>
+          <div><strong>免费</strong><span>无需付费即可观看</span></div>
+          <div><strong>多入口</strong><span>热门片段与合集</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="screen">
+          <svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="观赛画面示意">
+            <defs>
+              <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1e2a38"/>
+                <stop offset="1" stop-color="#111820"/>
+              </linearGradient>
+              <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffb454" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#ffb454" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect width="520" height="300" fill="url(#scr)"/>
+            <path d="M0 300 L140 110 L260 300Z" fill="url(#beam)" opacity=".5"/>
+            <path d="M520 300 L380 110 L260 300Z" fill="url(#beam)" opacity=".5"/>
+            <circle cx="260" cy="130" r="52" fill="none" stroke="#ff5a4d" stroke-width="3" opacity=".85"/>
+            <circle cx="260" cy="130" r="34" fill="#ff5a4d" opacity=".14"/>
+            <path d="M248 112l30 18-30 18z" fill="#ffb454"/>
+            <rect x="40" y="236" width="150" height="9" rx="4.5" fill="#3fd0b0" opacity=".55"/>
+            <rect x="40" y="256" width="96" height="9" rx="4.5" fill="#2a3442"/>
+            <rect x="330" y="236" width="150" height="9" rx="4.5" fill="#2a3442"/>
+            <rect x="384" y="256" width="96" height="9" rx="4.5" fill="#ffb454" opacity=".45"/>
+            <circle cx="60" cy="56" r="4" fill="#ff5a4d"/>
+            <rect x="74" y="50" width="86" height="12" rx="6" fill="#2a3442"/>
+          </svg>
+        </div>
+        <div class="art-caption">
+          <span class="live-tag"><i></i>今日大赛画面示意</span>
+          <span>内容随时段更新</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRY -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">观赛入口</div>
+        <h2>每日大赛免费观赛的四类常用入口</h2>
+        <p>不同访客的目的不一样：有人想追当天最热的一段，有人想按顺序看完合集。下面按用途拆开，选择最贴近自己需求的一类即可。</p>
+      </div>
+      <div class="entries">
+        <a class="entry" href="#hot">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7V5z" fill="currentColor"/></svg></span>
+          <h3>今日热门片段</h3>
+          <p>按热度排列当天讨论最多的片段，适合只想看高光时刻的访客。</p>
+          <span class="go">查看排行 →</span>
+        </a>
+        <a class="entry" href="#modes">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3>完整回看合集</h3>
+          <p>按日归档的大赛内容集合，便于从开场按顺序补齐当天看点。</p>
+          <span class="go">了解方式 →</span>
+        </a>
+        <a class="entry" href="#explain">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3>时段提醒</h3>
+          <p>每日大赛集中在固定时段更新，提前了解节奏不容易错过。</p>
+          <span class="go">查看节奏 →</span>
+        </a>
+        <a class="entry" href="#explain">
+          <span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <h3>话题解读</h3>
+          <p>把当天大赛的讨论焦点整理成短文，帮助快速理解来龙去脉。</p>
+          <span class="go">阅读解读 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">今日热点</div>
+        <h2>每日大赛免费观赛热点排行</h2>
+        <p>排行依据当天讨论量与浏览热度整理，名次会随时段变化。以下为页面展示的结构示例，具体条目以实际更新为准。</p>
+      </div>
+      <div class="hot-grid">
+        <div class="hot-list">
+          <div class="hot-item">
+            <div class="no">01</div>
+            <div>
+              <h3>开场高光片段</h3>
+              <p>当天大赛最早出现的讨论点，通常传播速度最快，适合快速进入状态。</p>
+            </div>
+            <span class="tag warm">热度上升</span>
+          </div>
+          <div class="hot-item">
+            <div class="no">02</div>
+            <div>
+              <h3>反转段落合集</h3>
+              <p>把几段出现明显转折的内容剪在一起，是免费观赛里回看率较高的一类。</p>
+            </div>
+            <span class="tag">回看较多</span>
+          </div>
+          <div class="hot-item">
+            <div class="no">03</div>
+            <div>
+              <h3>评论区集中讨论</h3>
+              <p>观众在评论区反复提到的细节，往往能补充画面里没讲清的信息。</p>
+            </div>
+            <span class="tag">话题延伸</span>
+          </div>
+          <div class="hot-item">
+            <div class="no">04</div>
+            <div>
+              <h3>完整版内容索引</h3>
+              <p>想按顺序看完当天大赛的访客，可以从这里找到整理好的完整入口。</p>
+            </div>
+            <span class="tag">结构清晰</span>
+          </div>
+        </div>
+        <aside class="side-card">
+          <h3>观赛前先看这几条</h3>
+          <ul>
+            <li>每日大赛内容以当天实际更新为准，页面不承诺固定条目。</li>
+            <li>免费观赛指无需额外付费即可浏览公开内容。</li>
+            <li>热点排行反映讨论热度，不代表内容质量评价。</li>
+            <li>遇到加载缓慢可稍后刷新，或换用其他入口。</li>
+          </ul>
+          <div class="note">提示：页面展示的条目为结构说明，具体内容随更新变化。</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section id="modes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">观看方式</div>
+        <h2>免费观赛的三种常用节奏</h2>
+        <p>同样是想看每日大赛，时间充裕和只有几分钟空闲的访客，适合的观看方式并不相同。</p>
+      </div>
+      <div class="modes">
+        <div class="mode">
+          <div class="badge">方式一</div>
+          <h3>碎片时间速览</h3>
+          <p>只看排行前列的片段，用几分钟了解当天大赛的主要讨论点，适合通勤或休息间隙。</p>
+          <ul>
+            <li><span>✓</span>优先看热门片段</li>
+            <li><span>✓</span>跳过完整流程</li>
+            <li><span>✓</span>关注评论区补充</li>
+          </ul>
+        </div>
+        <div class="mode">
+          <div class="badge">方式二</div>
+          <h3>按日完整回看</h3>
+          <p>从开场到收尾按顺序浏览，适合想理解前后因果关系、不希望遗漏细节的访客。</p>
+          <ul>
+            <li><span>✓</span>使用合集索引</li>
+            <li><span>✓</span>按时间顺序观看</li>
+            <li><span>✓</span>配合话题解读</li>
+          </ul>
+        </div>
+        <div class="mode">
+          <div class="badge">方式三</div>
+          <h3>定点等待更新</h3>
+          <p>每日大赛有相对固定的更新时段，提前记下时间，开播后直接进入免费观赛入口。</p>
+          <ul>
+            <li><span>✓</span>记住固定时段</li>
+            <li><span>✓</span>提前打开入口页</li>
+            <li><span>✓</span>收藏本页备用</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / FAQ -->
+  <section id="explain">
+    <div class="wrap about">
+      <div>
+        <div class="kicker" style="color:var(--teal);font-size:12.5px;letter-spacing:2px;font-weight:700;margin-bottom:8px;">关于本页</div>
+        <h2>每日大赛免费观赛页面说明</h2>
+        <p><strong>每日大赛免费观赛</strong>是一个面向普通访客的内容入口页，把当天大赛的热门片段、合集索引与观看节奏集中在一起，减少在不同页面之间来回跳转的时间。</p>
+        <p>页面本身不生产内容，也不对大赛结果作判断。排行、时段与条目结构用于说明组织方式，实际更新以当天呈现的内容为准。</p>
+        <p>如果你只是想知道“今天有什么值得看”，从热点排行进入即可；如果希望完整跟上进度，合集索引更合适。</p>
+        <div class="quote">本页所有排行与时段描述均为内容组织说明，不构成对具体内容的保证。</div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>每日大赛免费观赛真的不用付费吗？</summary>
+          <p>本页所指向的公开内容以免费浏览为主，不设置付费门槛。若个别内容来源另有要求，以该来源的实际说明为准。</p>
+        </details>
+        <details>
+          <summary>为什么热点排行每天不一样？</summary>
+          <p>排行反映的是当天讨论量与浏览热度，随时段推移会自然变化，因此不同时间打开看到的顺序可能不同。</p>
+        </details>
+        <details>
+          <summary>错过当天内容还能看吗？</summary>
+          <p>可以。合集索引按日归档，通常保留前几天的内容，方便补齐遗漏的段落。</p>
+        </details>
+        <details>
+          <summary>手机上观看体验如何？</summary>
+          <p>本页已适配小屏，导航、字号与卡片排列都按手机阅读调整，入口在首屏即可看到。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD STRIP -->
+  <section>
+    <div class="wrap">
+      <div class="strip">
+        <div>
+          <h2>收藏本页，随时进入每日大赛免费观赛</h2>
+          <p>把入口页保存到本地或书签，下次打开即可直接查看当天热点与观赛方式，不必重新搜索。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 7l8 5-8 5V7z" fill="#1a1206"/></svg>
+          </span>
+          每日大赛免费观赛
+        </div>
+        <p>汇集当天大赛热点片段、合集索引与观看节奏的内容入口页，帮助访客用更短时间找到想看的部分。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>页面导航</h4>
+          <ul>
+            <li><a href="#entry">观赛入口</a></li>
+            <li><a href="#hot">今日热点</a></li>
+            <li><a href="#modes">观看方式</a></li>
+            <li><a href="#explain">观赛答疑</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>常用说明</h4>
+          <ul>
+            <li><a href="#explain">免费观看范围</a></li>
+            <li><a href="#hot">排行如何生成</a></li>
+            <li><a href="#modes">更新时段提示</a></li>
+            <li><a href="#top">回到页面顶部</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>每日大赛免费观赛 · 内容入口页</span>
+      <span>页面展示的排行与时段为组织说明，具体内容以当天更新为准。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
