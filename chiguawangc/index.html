@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吃瓜网chigua-吃瓜网chigua热点合集_吃瓜网chigua今日黑料爆料</title>
+<meta name="description" content="吃瓜网chigua汇集网络热点话题与黑料爆料，按时间线梳理事件来龙去脉，提供吃瓜网chigua入口、今日热点与往期回顾，帮你在一个页面看清热门话题的完整脉络。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8474b'/%3E%3Cpath d='M32 12c-9 8-14 13-14 20a14 14 0 0 0 28 0c0-7-5-12-14-20z' fill='%23fff'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e8474b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --red:#e8474b;
+  --red-deep:#c43238;
+  --ink:#1f2329;
+  --ink-2:#4a5058;
+  --ink-3:#878e98;
+  --line:#ececee;
+  --bg:#fbf9f7;
+  --card:#ffffff;
+  --warm:#fff4ef;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* ---------- 页头 ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,249,247,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-row{
+  display:flex;align-items:center;gap:22px;
+  height:66px;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:800;font-size:18px;letter-spacing:.2px;
+  color:var(--ink);white-space:nowrap;
+}
+.brand .mark{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,#f4686b,#d92c34);
+  display:grid;place-items:center;flex:none;
+  box-shadow:0 4px 12px rgba(232,71,75,.28);
+}
+.brand .mark svg{width:20px;height:20px}
+nav.main{
+  display:flex;gap:4px;margin-left:auto;flex-wrap:wrap;
+}
+nav.main a{
+  font-size:14.5px;color:var(--ink-2);
+  padding:7px 12px;border-radius:8px;
+  transition:.18s;
+}
+nav.main a:hover{background:var(--warm);color:var(--red-deep)}
+.nav-cta{
+  font-size:14px;font-weight:600;color:#fff;
+  background:var(--red);padding:8px 16px;border-radius:20px;
+  transition:.18s;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--red-deep)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:38px;height:38px;cursor:pointer}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  padding:52px 0 44px;
+  background:
+    radial-gradient(900px 360px at 82% -10%, #ffe3dd 0%, rgba(255,227,221,0) 70%),
+    radial-gradient(700px 300px at -10% 10%, #fff0e6 0%, rgba(255,240,230,0) 70%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .85fr;gap:46px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:600;color:var(--red-deep);
+  background:#ffe9e5;border-radius:20px;padding:5px 13px;
+  margin-bottom:16px;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--red);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+h1{
+  font-size:38px;line-height:1.28;font-weight:800;
+  letter-spacing:-.5px;margin-bottom:16px;
+}
+h1 em{font-style:normal;color:var(--red)}
+.hero p.lead{
+  font-size:16.5px;color:var(--ink-2);max-width:34em;margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--red);color:#fff;font-weight:600;font-size:15px;
+  padding:12px 24px;border-radius:26px;
+  box-shadow:0 8px 20px rgba(232,71,75,.28);
+  transition:.2s;
+}
+.btn-primary:hover{background:var(--red-deep);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid #e0dbd6;background:#fff;color:var(--ink-2);
+  font-size:15px;padding:11px 20px;border-radius:26px;transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--red);color:var(--red-deep)}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-3)}
+.hero-stats b{display:block;font-size:21px;color:var(--ink);font-weight:800;line-height:1.3}
+
+.hero-visual{
+  position:relative;background:var(--card);border:1px solid var(--line);
+  border-radius:20px;padding:22px;box-shadow:0 18px 44px -22px rgba(60,40,30,.22);
+}
+.hero-visual h3{font-size:14px;color:var(--ink-3);font-weight:600;margin-bottom:14px;letter-spacing:.4px}
+.trend-item{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:10px 0;border-bottom:1px dashed var(--line);
+}
+.trend-item:last-child{border-bottom:0;padding-bottom:0}
+.trend-rank{
+  width:22px;height:22px;border-radius:6px;flex:none;
+  display:grid;place-items:center;font-size:12px;font-weight:800;
+  background:#f2efec;color:var(--ink-3);margin-top:3px;
+}
+.trend-item:nth-child(2) .trend-rank{background:var(--red);color:#fff}
+.trend-item:nth-child(3) .trend-rank{background:#ffb4a8;color:#8c2b24}
+.trend-item:nth-child(4) .trend-rank{background:#ffd8bd;color:#8a4a1e}
+.trend-item p{font-size:14px;line-height:1.55;color:var(--ink);font-weight:500}
+.trend-item span{display:block;font-size:12px;color:var(--ink-3);font-weight:400;margin-top:2px}
+
+/* ---------- 通用区块 ---------- */
+section{padding:56px 0}
+.sec-head{margin-bottom:28px;max-width:40em}
+.sec-head .kicker{
+  font-size:12.5px;font-weight:700;letter-spacing:1.6px;
+  color:var(--red);text-transform:uppercase;margin-bottom:8px;
+}
+.sec-head h2{
+  font-size:26px;font-weight:800;letter-spacing:-.3px;line-height:1.35;margin-bottom:8px;
+}
+.sec-head p{color:var(--ink-2);font-size:15.5px}
+
+/* ---------- 今日热点卡片 ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.22s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 34px -20px rgba(60,40,30,.3);border-color:#f0d9d4}
+.tag{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.5px;
+  color:var(--red-deep);background:#ffeceb;border-radius:5px;
+  padding:3px 8px;margin-bottom:12px;align-self:flex-start;
+}
+.card h3{font-size:17px;font-weight:700;line-height:1.5;margin-bottom:9px}
+.card p{font-size:14.5px;color:var(--ink-2);line-height:1.7;flex:1}
+.card .meta{
+  margin-top:16px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-3);display:flex;justify-content:space-between;gap:10px;
+}
+
+/* ---------- 时间线 ---------- */
+.timeline-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
+.timeline{border-left:2px solid #f3e2de;padding-left:26px;position:relative}
+.tl-item{position:relative;padding-bottom:26px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:"";position:absolute;left:-33px;top:6px;
+  width:12px;height:12px;border-radius:50%;
+  background:#fff;border:3px solid var(--red);
+}
+.tl-item time{font-size:12.5px;color:var(--red-deep);font-weight:700;letter-spacing:.4px}
+.tl-item h4{font-size:16px;font-weight:700;margin:3px 0 5px}
+.tl-item p{font-size:14.5px;color:var(--ink-2)}
+
+/* ---------- 入口/说明 ---------- */
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:34px;
+}
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.panel h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.panel p{font-size:14.8px;color:var(--ink-2);margin-bottom:12px}
+.checklist{list-style:none;display:grid;gap:11px;margin-top:6px}
+.checklist li{
+  font-size:14.8px;color:var(--ink-2);display:flex;gap:10px;align-items:flex-start;
+}
+.checklist li::before{
+  content:"";flex:none;width:18px;height:18px;border-radius:50%;
+  margin-top:4px;
+  background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 13l4 4 10-10' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat;
+}
+
+/* ---------- 下载块 ---------- */
+.download-box{
+  background:linear-gradient(135deg,#fff6f2,#ffeae6);
+  border:1px solid #f7d9d3;border-radius:18px;
+  padding:32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  justify-content:space-between;
+}
+.download-box .txt h3{font-size:19px;font-weight:800;margin-bottom:6px}
+.download-box .txt p{font-size:14.5px;color:var(--ink-2);max-width:38em}
+.btn-download{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--ink);color:#fff;font-weight:600;font-size:15px;
+  padding:13px 30px;border-radius:28px;
+  pointer-events:none;opacity:.92;
+}
+
+/* ---------- FAQ ---------- */
+.faq{display:grid;gap:12px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:17px 22px;transition:.2s;
+}
+details[open]{border-color:#f0d5d0;background:#fffdfc}
+summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";font-size:20px;color:var(--red);font-weight:400;line-height:1;flex:none;
+}
+details[open] summary::after{content:"–"}
+details p{font-size:14.6px;color:var(--ink-2);margin-top:11px;padding-right:20px}
+
+/* ---------- 页尾 ---------- */
+footer.site{
+  border-top:1px solid var(--line);background:#fff;
+  padding:40px 0 30px;margin-top:20px;
+}
+.foot-top{display:flex;justify-content:space-between;gap:34px;flex-wrap:wrap;margin-bottom:26px}
+.foot-brand{max-width:26em}
+.foot-brand .brand{margin-bottom:10px;font-size:16.5px}
+.foot-brand p{font-size:13.8px;color:var(--ink-3);line-height:1.75}
+.foot-links{display:flex;gap:52px;flex-wrap:wrap}
+.foot-col h5{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:.4px}
+.foot-col a{display:block;font-size:13.8px;color:var(--ink-3);padding:3px 0;transition:.16s}
+.foot-col a:hover{color:var(--red)}
+.foot-bottom{
+  border-top:1px solid var(--line);padding-top:18px;
+  font-size:12.8px;color:var(--ink-3);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .hero-visual{order:-1}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .timeline-wrap{grid-template-columns:1fr;gap:30px}
+  .panel-grid{grid-template-columns:1fr;gap:24px}
+  h1{font-size:31px}
+}
+@media (max-width:680px){
+  .nav-row{height:60px;gap:12px}
+  nav.main{
+    position:absolute;top:60px;left:0;right:0;
+    background:#fff;border-bottom:1px solid var(--line);
+    flex-direction:column;padding:10px 16px 16px;gap:2px;
+    display:none;box-shadow:0 14px 24px -18px rgba(0,0,0,.25);
+  }
+  nav.main.open{display:flex}
+  nav.main a{padding:10px 8px;font-size:15px}
+  .menu-btn{display:block;margin-left:auto;order:2}
+  .nav-cta{order:3;font-size:13px;padding:7px 13px}
+  .brand{font-size:15.5px}
+  .brand .mark{width:30px;height:30px}
+  .hero{padding:30px 0 34px}
+  h1{font-size:27px}
+  .hero p.lead{font-size:15.5px}
+  section{padding:40px 0}
+  .sec-head h2{font-size:22px}
+  .grid-3{grid-template-columns:1fr}
+  .panel,.download-box{padding:22px}
+  .hero-stats{gap:18px}
+  .hero-stats b{font-size:18px}
+  .foot-links{gap:30px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand" aria-label="吃瓜网chigua 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c-3.6 3.2-5.6 5.4-5.6 8a5.6 5.6 0 0 0 11.2 0c0-2.6-2-4.8-5.6-8z" fill="#fff"/><circle cx="12" cy="12.6" r="1.9" fill="#e8474b"/></svg>
+      </span>
+      吃瓜网chigua
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="展开导航" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4a5058" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="main" id="mainNav">
+      <a href="#hot">今日热点</a>
+      <a href="#timeline">事件脉络</a>
+      <a href="#guide">吃瓜须知</a>
+      <a href="#download">客户端</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="nav-cta" href="#hot">看今日瓜</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i class="dot"></i>今日热点已更新</span>
+        <h1>吃瓜网chigua</h1>
+        <p class="lead">吃瓜网chigua把散落在各个平台的热门话题收拢到一处，按事件时间线整理来龙去脉，配上简短要点和出处说明。不用翻十几条动态，也能看懂一条瓜从哪来、到哪去。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#hot">
+            进入今日热点
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn-ghost" href="#timeline">查看事件脉络</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>每日</b>热点更新节奏</div>
+          <div><b>时间线</b>事件梳理方式</div>
+          <div><b>多源</b>信息交叉对照</div>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="吃瓜网chigua 热门话题榜">
+        <h3>热门话题榜 · 示例</h3>
+        <div class="trend-item">
+          <span class="trend-rank">1</span>
+          <p>某综艺嘉宾发言引发讨论<span>话题热度持续上升</span></p>
+        </div>
+        <div class="trend-item">
+          <span class="trend-rank">2</span>
+          <p>品牌联名活动回应争议<span>官方已发布说明</span></p>
+        </div>
+        <div class="trend-item">
+          <span class="trend-rank">3</span>
+          <p>影视剧组路透图流传<span>多方说法尚未统一</span></p>
+        </div>
+        <div class="trend-item">
+          <span class="trend-rank">4</span>
+          <p>主播停播原因待确认<span>仅当事人账号有回应</span></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 今日热点 -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Today / 今日热点</div>
+        <h2>今天大家在吃什么瓜</h2>
+        <p>吃瓜网chigua把当下讨论度较高的话题分门别类，每条都标注信息状态：已确认、待核实、仅单方说法。先看状态，再决定要不要站队。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">待核实</span>
+          <h3>综艺片段被剪掉的内容</h3>
+          <p>一段未播片段的截图在多个平台流传，讨论集中在剪辑取舍上。目前节目组未正式回应，截图来源也无法确认，建议先看原有正片内容再判断。</p>
+          <div class="meta"><span>讨论热度较高</span><span>仅单方说法</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">已回应</span>
+          <h3>联名活动的排队与限购</h3>
+          <p>品牌方已发布活动说明，回应了门店排队与限购规则的问题。相关门店的实际情况以官方公告为准，网传的“临时加价”说法缺少凭证支持。</p>
+          <div class="meta"><span>官方已说明</span><span>规则类话题</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">脉络清晰</span>
+          <h3>剧组路透与阵容传闻</h3>
+          <p>围绕新剧阵容的传闻已持续数周，从路透图到片场名单说法不一。吃瓜网chigua把各方说法按时间排列，方便对比哪条线索先出现、哪条被推翻。</p>
+          <div class="meta"><span>多方说法并存</span><span>时间线可查</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">热度回落</span>
+          <h3>直播停播后的公开回应</h3>
+          <p>当事人账号已发布简短说明，但未解释全部细节。此后没有新的公开信息，话题热度逐步回落，相关猜测缺少后续证据。</p>
+          <div class="meta"><span>当事人回应</span><span>后续无更新</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">观点分歧</span>
+          <h3>旧采访内容被重新翻出</h3>
+          <p>一段早期采访被截取传播，与当下语境存在差异。讨论的焦点其实在“断章取义”上，把完整回答放回原文后，部分指责就不再成立。</p>
+          <div class="meta"><span>需看完整原文</span><span>语境差异</span></div>
+        </article>
+        <article class="card">
+          <span class="tag">信息有限</span>
+          <h3>网传聊天记录截屏</h3>
+          <p>截图类信息最容易失真。吃瓜网chigua对这类内容统一标注“信息有限”，提醒读者注意头像、时间戳和上下文是否完整，不急于下结论。</p>
+          <div class="meta"><span>截图类信息</span><span>谨慎看待</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 事件脉络 -->
+  <section id="timeline" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Timeline / 事件脉络</div>
+        <h2>一条瓜是怎么被讲清楚的</h2>
+        <p>吃瓜网chigua不追求“第一时间爆料”，更在意事件能否被完整还原。以下是一个典型话题在页面上呈现的四个阶段。</p>
+      </div>
+      <div class="timeline-wrap">
+        <div class="timeline">
+          <div class="tl-item">
+            <time>阶段一 · 线索出现</time>
+            <h4>先记录原始出处</h4>
+            <p>话题最初出现在哪个平台、由谁发布、原文是什么，都先原样留存，避免二次转述时走样。</p>
+          </div>
+          <div class="tl-item">
+            <time>阶段二 · 多方回应</time>
+            <h4>把各方说法并列</h4>
+            <p>当事方、相关方、平台方的回应分开列出，谁说了什么一目了然，不替任何一方下判断。</p>
+          </div>
+          <div class="tl-item">
+            <time>阶段三 · 事实核对</time>
+            <h4>标注信息确定程度</h4>
+            <p>已确认、待核实、仅单方说法三种状态分开标注，读者可以据此决定信任哪一部分内容。</p>
+          </div>
+          <div class="tl-item">
+            <time>阶段四 · 热度收束</time>
+            <h4>记录话题如何降温</h4>
+            <p>新信息停止出现后，页面会补充说明话题现状，避免旧内容被反复当成新瓜传播。</p>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>为什么时间线比“爆料”更有用</h3>
+          <p>热点话题往往在几小时内经历多次反转。单条爆料容易只呈现一个切面，而按时间排列能把前后矛盾暴露出来。吃瓜网chigua的每条热点都配一条简短时间线，读者看到的是变化过程，而不是一句结论。</p>
+          <p>同时，页面会说明哪些信息来自公开报道、哪些来自当事人账号、哪些只是网传截图。不同来源的可信度不同，把来源写清楚，比给结论更重要。</p>
+          <ul class="checklist">
+            <li>同一话题只保留一条主线，避免信息重复</li>
+            <li>关键节点标注时间与来源，方便回查</li>
+            <li>争议内容不删改，但会注明争议所在</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 吃瓜须知 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Guide / 吃瓜须知</div>
+        <h2>看瓜之前，先看这几条</h2>
+        <p>吃瓜网chigua整理内容时坚持几个基本原则，也希望访问者用同样的方式看待每一条热点。</p>
+      </div>
+      <div class="panel">
+        <div class="panel-grid">
+          <div>
+            <h3>内容层面</h3>
+            <p>热点信息以公开可见的内容为基础，不做无依据的推测。涉及个人隐私、未公开身份的信息不收录；涉及未成年人的话题原则上不展开。</p>
+            <p>对同一事件，若不同来源说法冲突，页面会并列呈现，并说明分歧点在哪里，而不是挑一个更“劲爆”的版本。</p>
+          </div>
+          <div>
+            <h3>阅读层面</h3>
+            <p>看到截图先看上下文，看到“知情人”先看有没有可核实的身份，看到情绪化标题先找原始出处。这三步能过滤掉大部分误传。</p>
+            <p>吃瓜网chigua在每个话题下都保留状态标签，读者可以据此判断信息成熟度。热度高不等于事实清楚，这一点值得反复提醒。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 客户端下载 -->
+  <section id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="download-box">
+        <div class="txt">
+          <h3>吃瓜网chigua 客户端</h3>
+          <p>客户端将聚合今日热点、事件时间线与话题状态标签，支持按更新时间浏览往期内容。当前下载入口尚在准备中，页面内容可直接在浏览器内阅读。</p>
+        </div>
+        <a class="btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ / 常见问题</div>
+        <h2>关于吃瓜网chigua 的常见问题</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>吃瓜网chigua 的内容从哪里来？</summary>
+          <p>内容以各平台公开可见的讨论、当事人账号发布的信息和公开报道为基础，经过整理后按事件归类。页面会注明信息来源类型，网传截图类内容单独标注。</p>
+        </details>
+        <details>
+          <summary>热点多久更新一次？</summary>
+          <p>按话题热度变化更新，没有固定条数。新信息出现时会补充到对应事件的时间线中；话题停止发酵后，页面会说明后续状态，而不是简单删除。</p>
+        </details>
+        <details>
+          <summary>为什么有的内容标注“待核实”？</summary>
+          <p>当信息仅有一个来源、或来源身份无法确认时，会标注为待核实。这个标签表示信息尚未得到多方印证，不代表内容为假，也不代表内容为真。</p>
+        </details>
+        <details>
+          <summary>可以在吃瓜网chigua 提交线索吗？</summary>
+          <p>页面目前以内容呈现为主，线索提交功能尚未开放。阅读时如果发现明显的事实错误，可以记录下具体段落和信息来源，便于后续核对。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c-3.6 3.2-5.6 5.4-5.6 8a5.6 5.6 0 0 0 11.2 0c0-2.6-2-4.8-5.6-8z" fill="#fff"/><circle cx="12" cy="12.6" r="1.9" fill="#e8474b"/></svg>
+          </span>
+          吃瓜网chigua
+        </div>
+        <p>吃瓜网chigua 关注网络热门话题的来龙去脉，以时间线梳理事件、以状态标签标注信息确定程度，让每一次围观都有据可查。</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>内容</h5>
+          <a href="#hot">今日热点</a>
+          <a href="#timeline">事件脉络</a>
+          <a href="#guide">吃瓜须知</a>
+        </div>
+        <div class="foot-col">
+          <h5>服务</h5>
+          <a href="#download">客户端下载</a>
+          <a href="#faq">常见问题</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 吃瓜网chigua · 内容仅供信息浏览</span>
+      <span>热点内容以官方与当事人公开发布为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('mainNav');
+  if(btn && nav){
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+  </html>
